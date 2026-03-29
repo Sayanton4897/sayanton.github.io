@@ -9,12 +9,10 @@
       --bg: #0b1220;
       --bg-soft: #111a2e;
       --card: rgba(255, 255, 255, 0.08);
-      --card-strong: rgba(255, 255, 255, 0.12);
       --text: #e5edf7;
       --muted: #9fb0c7;
       --line: rgba(255, 255, 255, 0.12);
       --accent: #5eead4;
-      --accent-2: #60a5fa;
       --shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
       --radius: 22px;
       --max: 1100px;
@@ -67,18 +65,8 @@
       min-height: 74px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 20px;
-    }
-
-    .brand {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-    }
-
-    .brand span {
-      color: var(--accent);
     }
 
     .nav-links {
@@ -97,152 +85,8 @@
       color: var(--text);
     }
 
-    .hero {
-      padding: 92px 0 56px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .hero-card,
-    .panel,
-    .project,
-    .timeline-item,
-    .skill-group,
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 34px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(94, 234, 212, 0.1);
-      border: 1px solid rgba(94, 234, 212, 0.2);
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2.2rem, 4vw, 4.3rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-subtitle {
-      margin: 0 0 20px;
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 60ch;
-    }
-
-    .hero-summary {
-      margin: 0;
-      color: var(--text);
-      opacity: 0.95;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-weight: 600;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #07111f;
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .hero-side {
-      padding: 24px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .photo {
-      aspect-ratio: 1 / 1;
-      border-radius: 24px;
-      background: linear-gradient(145deg, rgba(96,165,250,0.22), rgba(94,234,212,0.12));
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      font-size: 4rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.88);
-      overflow: hidden;
-    }
-
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .quick-facts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .fact {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--line);
-    }
-
-    .fact strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
-
-    .fact span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
     section {
-      padding: 22px 0 26px;
+      padding: 32px 0;
     }
 
     .section-head {
@@ -261,10 +105,28 @@
       max-width: 70ch;
     }
 
-    .panel {
-      padding: 28px;
+    .panel,
+    .project,
+    .timeline-item,
+    .skill-group,
+    .contact-card,
+    .intro-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
+    .intro-card,
+    .panel,
+    .project,
+    .timeline-item,
+    .skill-group,
+    .contact-card {
+      padding: 24px;
+    }
+
+    .intro-grid,
     .about-grid,
     .skills-grid,
     .contact-grid {
@@ -272,16 +134,98 @@
       gap: 18px;
     }
 
+    .intro-grid,
     .about-grid {
-      grid-template-columns: 1.35fr 1fr;
+      grid-template-columns: 1.2fr 1fr;
     }
 
     .skills-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .skill-group {
-      padding: 22px;
+    .contact-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .intro-card h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .intro-subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .intro-card p {
+      margin: 0;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .photo {
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(96,165,250,0.22), rgba(94,234,212,0.12));
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .skill-group h3,
@@ -308,32 +252,19 @@
       margin-top: 8px;
     }
 
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      padding: 24px;
-    }
-
-    .timeline-item .role {
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
+    .timeline,
     .projects-grid {
       display: grid;
       gap: 18px;
     }
 
-    .project {
-      padding: 24px;
-    }
-
-    .project p {
-      margin: 8px 0 0;
+    .project p,
+    .contact-card a,
+    .contact-card p,
+    .timeline-item .role {
       color: var(--muted);
+      margin: 0;
+      word-break: break-word;
     }
 
     .tag-row {
@@ -350,21 +281,6 @@
       border: 1px solid var(--line);
       color: var(--muted);
       font-size: 0.84rem;
-    }
-
-    .contact-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .contact-card {
-      padding: 22px;
-    }
-
-    .contact-card a,
-    .contact-card p {
-      color: var(--muted);
-      margin: 0;
-      word-break: break-word;
     }
 
     footer {
@@ -385,49 +301,23 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid,
+      .intro-grid,
       .about-grid,
       .skills-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
-      .hero {
-        padding-top: 64px;
-      }
-
-      .hero-card,
-      .hero-side,
-      .panel,
-      .project,
-      .timeline-item,
-      .skill-group,
-      .contact-card {
-        border-radius: 18px;
-      }
     }
 
     @media (max-width: 600px) {
       nav {
-        align-items: flex-start;
         padding: 14px 0;
-        flex-direction: column;
+        justify-content: center;
       }
 
       .nav-links {
         gap: 12px;
-      }
-
-      .hero-card {
-        padding: 24px;
-      }
-
-      .panel,
-      .timeline-item,
-      .project,
-      .skill-group,
-      .contact-card {
-        padding: 20px;
+        justify-content: center;
       }
 
       .quick-facts {
@@ -439,55 +329,59 @@
 <body>
   <div class="nav-wrap">
     <div class="container">
-<nav style="justify-content: flex-end;">
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<main id="home">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-card reveal visible">
-        <div class="eyebrow">Transportation Engineering • Mobility Planning • Demand Modelling</div>
-        <h1>Sayanton Mohanta</h1>
-        <p class="hero-subtitle">Transportation Engineer | Traffic Engineer | Transport Planner | Urban Mobility &amp; Demand Modelling | Data Analyst</p>
-        <p class="hero-summary">
-          Transportation Engineer with 1+ year of experience in traffic analysis, transport demand forecasting, feasibility studies, and urban mobility planning.
-        </p>
-      </div>
+      <nav>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </div>
-  </section>
-</main>
+  </div>
 
-        <aside class="hero-side hero-card reveal visible">
-          <div class="photo">
-            <img src="DSC_2279 20220125 115428.JPG" alt="Sayanton Mohanta">
-          </div>
-          <div class="quick-facts">
-            <div class="fact">
-              <strong>Location</strong>
-              <span>Durgapur, West Bengal</span>
-            </div>
-            <div class="fact">
-              <strong>Current Focus</strong>
-              <span>PhD at IIT Kharagpur</span>
-            </div>
-            <div class="fact">
-              <strong>Industry Experience</strong>
-              <span>1+ year</span>
-            </div>
-            <div class="fact">
-              <strong>Primary Tools</strong>
-              <span>VISUM, QGIS, AutoCAD, Python</span>
+  <main id="home">
+    <section id="intro">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-card reveal visible">
+            <h1>Sayanton Mohanta</h1>
+            <p class="intro-subtitle">Transportation Engineer | Traffic Engineer | Transport Planner | Urban Mobility &amp; Demand Modelling | Data Analyst</p>
+            <p>
+              Transportation Engineer with 1+ year of experience in traffic analysis, transport demand forecasting, feasibility studies, and urban mobility planning. Actively seeking opportunities in traffic engineering, transport planning, and urban mobility.
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="mailto:sayantonmohanta@gmail.com">Email Me</a>
+              <a class="btn" href="https://linkedin.com/in/sayanton-mohanta-4782a792" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>
-        </aside>
+
+          <div class="intro-card reveal visible">
+            <div class="photo">
+              <img src="DSC_2279 20220125 115428.JPG" alt="Sayanton Mohanta">
+            </div>
+            <div class="quick-facts">
+              <div class="fact">
+                <strong>Location</strong>
+                <span>Durgapur, West Bengal</span>
+              </div>
+              <div class="fact">
+                <strong>Current Focus</strong>
+                <span>PhD at IIT Kharagpur</span>
+              </div>
+              <div class="fact">
+                <strong>Industry Experience</strong>
+                <span>1+ year</span>
+              </div>
+              <div class="fact">
+                <strong>Primary Tools</strong>
+                <span>VISUM, QGIS, AutoCAD, Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -500,7 +394,7 @@
         <div class="about-grid">
           <div class="panel reveal">
             <p>
-              I am a Transportation Engineer seeking roles in traffic engineering, transport planning, and urban mobility, with experience in feasibility and pre-feasibility studies, transport demand forecasting, network analysis, survey supervision, stakeholder coordination, and technical reporting for metro, elevated road, MRT, and economic corridor projects
+              I am a Transportation Engineer seeking roles in traffic engineering, transport planning, and urban mobility, with experience in feasibility and pre-feasibility studies, transport demand forecasting, network analysis, survey supervision, stakeholder coordination, and technical reporting for metro, elevated road, MRT, and economic corridor projects.
             </p>
             <p>
               I am currently pursuing a PhD in Civil Engineering at IIT Kharagpur, with a sustained interest in sustainable mobility, integrated transport systems, and evidence-based planning methods.
@@ -569,152 +463,3 @@
           <article class="project reveal">
             <div class="meta">Jaipur, Rajasthan • 2023</div>
             <h3>Pre-Feasibility Report for Elevated Road at Jawahar Nagar Bypass</h3>
-            <p>Client: Jaipur Development Authority</p>
-            <ul>
-              <li>Analyzed traffic survey data and carried out traffic calculations for elevated road pre-feasibility assessment.</li>
-              <li>Supported pre-feasibility report preparation through data interpretation and technical documentation.</li>
-            </ul>
-            <div class="tag-row">
-              <span class="tag">Pre-Feasibility</span>
-              <span class="tag">Traffic Analysis</span>
-              <span class="tag">Corridor Assessment</span>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="meta">Odisha • 2024</div>
-            <h3>Master Plan for Rail-Based MRT System Connecting Bhubaneswar, Khordha, Puri, and Cuttack</h3>
-            <p>Client: Delhi Metro Rail Corporation / Odisha Rail Infrastructure Development Limited</p>
-            <ul>
-              <li>Monitored field surveys and validated survey outputs to support MRT system master planning.</li>
-              <li>Analyzed traffic survey data and prepared technical report inputs for planning recommendations.</li>
-              <li>Coordinated with clients and stakeholders, presented technical findings, and reviewed planning proposals during project evaluation stages.</li>
-            </ul>
-            <div class="tag-row">
-              <span class="tag">MRT Planning</span>
-              <span class="tag">Survey Validation</span>
-              <span class="tag">Stakeholder Coordination</span>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="meta">Odisha • 2024</div>
-            <h3>Detailed Development Plan for Dedicated Economic Corridor between Bhubaneswar and Puri</h3>
-            <p>Client: Odisha Bridge and Construction Corporation Limited</p>
-            <ul>
-              <li>Monitored field surveys and site activities to support corridor development planning.</li>
-              <li>Conducted site assessments and alignment evaluations for proposed transport infrastructure improvements.</li>
-              <li>Analyzed traffic survey data and prepared report inputs for corridor planning studies.</li>
-              <li>Participated in client discussions and stakeholder consultations to review project requirements and alternatives.</li>
-            </ul>
-            <div class="tag-row">
-              <span class="tag">Economic Corridor</span>
-              <span class="tag">Site Assessment</span>
-              <span class="tag">Alignment Evaluation</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Skills</h2>
-          <p>Technical capabilities across transport modelling, survey analytics, spatial tools, and engineering workflows.</p>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-group reveal">
-            <h3>Transport Planning &amp; Modelling</h3>
-            <p>VISUM, VISSIM, transport demand forecasting, traffic simulation, trip assignment, feasibility studies, network analysis.</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Traffic &amp; Mobility Analysis</h3>
-            <p>Traffic surveys, traffic volume analysis, travel demand assessment, traffic calculations, field validation.</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Design, GIS &amp; Data</h3>
-            <p>AutoCAD, Civil 3D, QGIS, Excel, Python, NumPy, Pandas, Matplotlib, YOLO.</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Professional Competencies</h3>
-            <p>Stakeholder coordination, technical reporting, client presentations, survey supervision, planning documentation, standards interpretation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Education</h2>
-          <p>Formal academic background in civil engineering and transportation planning.</p>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="meta">2024 – 2027</div>
-            <h3>PhD in Civil Engineering</h3>
-            <div class="role">IIT Kharagpur • CGPA: 8.24</div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="meta">2021 – 2023</div>
-            <h3>M.Tech in Traffic and Transportation Planning</h3>
-            <div class="role">National Institute of Technology Calicut • CGPA: 8.15</div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="meta">2017 – 2021</div>
-            <h3>B.Tech in Civil Engineering</h3>
-            <div class="role">Guru Ghasidas Vishwavidyalaya • CGPA: 8.46</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Contact</h2>
-          <p>Use these details directly or connect through LinkedIn for academic or professional collaboration.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <h3>Email</h3>
-            <p><a href="mailto:sayantonmohanta@gmail.com">sayantonmohanta@gmail.com</a></p>
-          </div>
-          <div class="contact-card reveal">
-            <h3>LinkedIn</h3>
-            <p><a href="https://linkedin.com/in/sayanton-mohanta-4782a792" target="_blank" rel="noreferrer">linkedin.com/in/sayanton-mohanta-4782a792</a></p>
-          </div>
-          <div class="contact-card reveal">
-            <h3>Phone</h3>
-            <p><a href="tel:+919647972271">+91 96479 72271</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 Sayanton Mohanta • Transportation Engineering Portfolio
-    </div>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach((el, index) => {
-      if (!el.classList.contains('visible')) {
-        el.style.transitionDelay = `${Math.min(index * 40, 240)}ms`;
-      }
-      observer.observe(el);
-    });
-  </script>
-</body>
-</html>
