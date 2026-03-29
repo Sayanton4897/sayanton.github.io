@@ -210,6 +210,13 @@
       overflow: hidden;
     }
 
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .quick-facts {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -458,13 +465,16 @@
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="Resume for.pdf" target="_blank" rel="noreferrer">Download Resume</a>
             <a class="btn btn-secondary" href="mailto:sayantonmohanta@gmail.com">Email Me</a>
             <a class="btn btn-secondary" href="https://linkedin.com/in/sayanton-mohanta-4782a792" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
 
         <aside class="hero-side hero-card reveal visible">
-          <div class="photo">SM</div>
+          <div class="photo">
+            <img src="DSC_2279 20220125 115428.jpg" alt="Sayanton Mohanta">
+          </div>
           <div class="quick-facts">
             <div class="fact">
               <strong>Location</strong>
