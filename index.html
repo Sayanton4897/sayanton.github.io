@@ -300,6 +300,102 @@
       transform: translateY(0);
     }
 
+    /* Intro highway animation */
+    #intro {
+      position: relative;
+      overflow: hidden;
+      padding: 56px 0;
+    }
+
+    .hero-highway-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-highway-bg .sky {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(9,16,28,0.35) 0%, rgba(11,18,32,0.72) 100%);
+    }
+
+    .hero-highway-bg .road {
+      position: absolute;
+      left: 50%;
+      bottom: -3%;
+      transform: translateX(-50%);
+      width: 140%;
+      height: 46%;
+      background: linear-gradient(180deg, #2f3642 0%, #1a1f29 100%);
+      clip-path: polygon(43% 0%, 57% 0%, 100% 100%, 0% 100%);
+      opacity: 0.92;
+    }
+
+    .hero-highway-bg .lane-mark {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 10px;
+      height: 38%;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 209, 102, 0) 0 18px,
+        rgba(255, 209, 102, 1) 18px 42px
+      );
+      transform-origin: bottom center;
+      animation: highwayMove 1s linear infinite;
+      opacity: 0.95;
+    }
+
+    .hero-highway-bg .lane-mark.left {
+      transform: translateX(-80px) perspective(220px) rotateX(75deg);
+    }
+
+    .hero-highway-bg .lane-mark.right {
+      transform: translateX(70px) perspective(220px) rotateX(75deg);
+    }
+
+    .hero-highway-bg .edge-left,
+    .hero-highway-bg .edge-right {
+      position: absolute;
+      bottom: 0;
+      width: 4px;
+      height: 42%;
+      background: rgba(255,255,255,0.28);
+    }
+
+    .hero-highway-bg .edge-left {
+      left: 31.5%;
+      transform: skewX(28deg);
+    }
+
+    .hero-highway-bg .edge-right {
+      right: 31.5%;
+      transform: skewX(-28deg);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 1;
+    }
+
+    #intro .intro-card {
+      background: rgba(17, 26, 46, 0.76);
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes highwayMove {
+      from {
+        background-position-y: 0;
+      }
+      to {
+        background-position-y: 80px;
+      }
+    }
+
     @media (max-width: 900px) {
       .intro-grid,
       .about-grid,
@@ -323,6 +419,27 @@
       .quick-facts {
         grid-template-columns: 1fr;
       }
+
+      .hero-highway-bg .road {
+        width: 180%;
+        height: 38%;
+      }
+
+      .hero-highway-bg .edge-left {
+        left: 18%;
+      }
+
+      .hero-highway-bg .edge-right {
+        right: 18%;
+      }
+
+      .hero-highway-bg .lane-mark.left {
+        transform: translateX(-38px) perspective(220px) rotateX(75deg);
+      }
+
+      .hero-highway-bg .lane-mark.right {
+        transform: translateX(28px) perspective(220px) rotateX(75deg);
+      }
     }
   </style>
 </head>
@@ -344,13 +461,22 @@
 
   <main id="home">
     <section id="intro">
-      <div class="container">
+      <div class="hero-highway-bg">
+        <div class="sky"></div>
+        <div class="road"></div>
+        <div class="lane-mark left"></div>
+        <div class="lane-mark right"></div>
+        <div class="edge-left"></div>
+        <div class="edge-right"></div>
+      </div>
+
+      <div class="container hero-overlay">
         <div class="intro-grid">
           <div class="intro-card reveal visible">
             <h1>Sayanton Mohanta</h1>
             <p class="intro-subtitle">Transportation Engineer | Traffic Engineer | Transport Planner | Urban Mobility &amp; Demand Modelling | Data Analyst</p>
             <p>
-              Transportation Engineer with 1+ year of experience in traffic analysis, transport demand forecasting, feasibility studies, and urban mobility planning. Actively seeking opportunities in traffic engineering, transport planning, and urban mobility.
+              Transportation Engineer with 1+ year of experience in traffic analysis, transport demand forecasting, feasibility studies and urban mobility planning. Actively seeking opportunities in traffic engineering, transport planning, and urban mobility.
             </p>
             <div class="cta-row">
               <a class="btn" href="mailto:sayantonmohanta@gmail.com">Email Me</a>
@@ -384,6 +510,7 @@
         </div>
       </div>
     </section>
+
     <section id="about">
       <div class="container">
         <div class="section-head reveal">
@@ -393,10 +520,10 @@
         <div class="about-grid">
           <div class="panel reveal">
             <p>
-              I am a Transportation Engineer seeking roles in traffic engineering, transport planning, and urban mobility, with experience in feasibility and pre-feasibility studies, transport demand forecasting, network analysis, survey supervision, stakeholder coordination, and technical reporting for metro, elevated road, MRT, and economic corridor projects.
+              I am a Transportation Engineer seeking roles in traffic engineering, transport planning, and urban mobility with experience in feasibility and pre-feasibility studies, transport demand forecasting, network analysis, survey supervision, stakeholder coordination, and technical reporting for metro, elevated road, MRT, and economic corridor projects.
             </p>
             <p>
-              I am currently pursuing a PhD in Civil Engineering at IIT Kharagpur, with a sustained interest in sustainable mobility, integrated transport systems, and evidence-based planning methods.
+              I am currently pursuing a PhD in Civil Engineering at IIT Kharagpur, with a research focus on traffic safety, driver behaviour on highways, and highway geometric design.
             </p>
           </div>
           <div class="panel reveal">
